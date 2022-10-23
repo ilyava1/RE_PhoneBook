@@ -1,5 +1,10 @@
 import re
+from my_decorators import my_decor_decorator
 
+my_log_path = "C:/TEMP_Decorator_logs/"
+
+
+@my_decor_decorator(my_log_path)
 def search_for_string(pattern, base_string):
     """
     Функция поиска строки по шаблону (регулярному выражению).
@@ -20,9 +25,10 @@ def search_for_string(pattern, base_string):
         result_string = searh_result.group()[:-1]
     else:
         result_string = ''
-
+    print(end='')
     return result_string, base_string
 
+@my_decor_decorator(my_log_path)
 def phone_transform(phone_string):
     """
     Функция трансформации телефонного номера в формат +7(999)999-99-99.

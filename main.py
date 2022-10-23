@@ -3,7 +3,7 @@ import base_service
 import json
 import time
 import csv
-
+from re_service import my_log_path
 
 if __name__ == '__main__':
     with open('config.json', 'r', encoding='utf-8-sig') as f:
@@ -110,4 +110,6 @@ if __name__ == '__main__':
             datawriter.writerow(contact)
 
     print("Результирующий список контактов записан в файл 'phonebook.csv'")
+    print()
+    print(f"Результат работы функций модуля re-service записан в лог-файл по адресу: {my_log_path}")
     print()
